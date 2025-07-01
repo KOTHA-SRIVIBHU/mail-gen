@@ -139,7 +139,7 @@ faiss-cpu
 
 ## License
 
-This project is for educational/demo purposes.
+This project is for educational purposes.
 
 
 * [LangChain](https://www.langchain.com/)
