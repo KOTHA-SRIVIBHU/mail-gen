@@ -105,9 +105,9 @@ The app will be live at:
    * Edit the subject/body directly
    * Copy them with the click of a button
 
-![Alt Text](screenshots\i.png)
+![Alt Text](screenshots/i.png)
 
-![Alt Text](screenshots\ii.png)
+![Alt Text](screenshots//ii.png)
 
 ---
 
