@@ -1,0 +1,20 @@
+Flask==2.3.3
+python-dotenv==1.0.1
+
+# LangChain & Google Generative AI
+langchain==0.2.0
+langchain-google-genai==1.0.0
+google-generativeai==0.3.2
+
+# FAISS for vector store
+faiss-cpu==1.8.0
+
+# Vector store dependencies
+langchain-community==0.2.0
+langchainhub==0.1.15
+
+# Required for embeddings/text splitting
+langchain-text-splitters==0.0.1
+
+# Optional but useful
+tqdm==4.66.4
