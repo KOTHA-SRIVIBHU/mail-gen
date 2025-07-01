@@ -6,6 +6,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import CharacterTextSplitter
 import os
 from dotenv import load_dotenv
+
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -13,6 +15,8 @@ app = Flask(__name__)
 os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-001", temperature=0.7,api_key=os.getenv("GOOGLE_API_KEY"))
+
+
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 
@@ -40,6 +44,26 @@ def load_email_templates():
         Please find my resume attached for your review.
         Sincerely,
         [Your Name]
+
+        Informal Business Inquiry:
+        Subject: Quick Question about [Specific Topic]
+        Hey [Recipient Name],
+
+        Hope you're doing well! I wanted to ask about [specific topic or query]. Could you give me a bit more info on that?
+
+        Thanks a bunch!
+        Best,
+        [Your Name]
+
+        Informal Job Application:
+        Subject: Application for [Position Name] - Let's Connect!
+        Hey [Hiring Manager's Name],
+
+        I'm really excited about the [Position Name] role at [Company Name]. I think my background in [relevant experience] would be a great fit. I've attached my resume for you.
+
+        Looking forward to chatting more!
+        Cheers,
+        [Your Name]
         """
 
 
@@ -61,17 +85,19 @@ retriever = vector_store.as_retriever(search_kwargs={"k": 3})
 
 
 email_prompt = PromptTemplate(
-    input_variables=["context", "prompt", "recipient"],
+    input_variables=["context", "prompt", "recipient", "tone", "length"],
     template="""
     You are a professional email assistant. Use the following email templates as reference:
     {context}
-    
+
     Generate a email based on the following request:
     {prompt}
     
     Recipient: {recipient}
     
     Tone of the email: {tone}
+
+    Length of the email: {length}
 
     Structure your response as follows:
     
@@ -82,9 +108,9 @@ email_prompt = PromptTemplate(
     
     Important:
     - Include appropriate greeting and closing
-    - Use professional tone and proper formatting
+    - Use proper tone mentioned in the tone of the email and proper formatting
     - Personalize for the recipient
-    - Keep it concise (under 200 words)
+    - Keep in mind the length of the email
     """
 )
 
@@ -96,7 +122,7 @@ def index():
         prompt_text = request.form['prompt']
         recipient = request.form['recipient']
         tone = request.form['tone']
-        
+        length = request.form['length']        
         relevant_templates = retriever.get_relevant_documents(prompt_text)
         context = "\n\n".join([doc.page_content for doc in relevant_templates])
         
@@ -106,7 +132,8 @@ def index():
                 context=context,
                 prompt=prompt_text,
                 recipient=recipient,
-                tone=tone
+                tone=tone,
+                length=length
             )
             
             
@@ -125,5 +152,5 @@ def index():
 
 if __name__ == '__main__':
     
-    port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
