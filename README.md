@@ -29,7 +29,7 @@ sometimes it will take 50 seconds to load the appication
 
 ---
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 ### 1. Clone the repository
 
@@ -64,7 +64,7 @@ PORT=10000
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 ```
 ├── app.py                    # Main Flask application
