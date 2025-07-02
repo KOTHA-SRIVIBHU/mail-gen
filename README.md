@@ -91,8 +91,8 @@ Access the app at: 🔗 `http://localhost:10000`
 4. Edit or copy the generated subject and body directly from the interface.
 
 ### Screenshots
-![Form Interface](screenshots/form.png)
-![Generated Email](screenshots/output.png)
+![Form Interface](screenshots/i.png)
+![Generated Email](screenshots/ii.png)
 
 > **Note**: Ensure screenshot files exist in the `screenshots/` directory or update the paths accordingly.
 
