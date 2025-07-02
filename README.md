@@ -30,9 +30,30 @@ cd ai-mail-generator
 ```
 
 ### 2. Create and Activate a Virtual Environment
+
+#### Windows
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
+```
+
+---
+
+#### macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+#### Linux (Ubuntu)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ### 3. Install Dependencies
