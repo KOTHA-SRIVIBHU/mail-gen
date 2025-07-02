@@ -87,8 +87,8 @@ Access the app at: 🔗 `http://localhost:10000`
 1. Open the web interface at `http://localhost:10000`.
 2. Fill in the form:
    - **Prompt**: Describe the email's purpose (e.g., "Inquire about a product").
-   - **Recipient**: Name of the recipient (e.g., "John Doe").
-   - **Tone**: Select "Formal" or "Informal".
+   - **Recipient**: Name of the recipient.
+   - **Tone**: Select "Formal", "Informal", "Harsh" or even "Urgent" .
    - **Length**: Choose "Short" (50-100 words), "Medium" (100-200 words), or "Long" (200-300 words).
 3. Submit the form to generate the email.
 4. Edit or copy the generated subject and body directly from the interface.
