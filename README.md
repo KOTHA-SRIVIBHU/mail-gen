@@ -83,9 +83,9 @@ PORT=10000
   Hey [Hiring Manager's Name],
   ...
   ```
-![Form Interface](screenshots/Outputs/i.png)
+![Form Interface](screenshots/Outputs/Formal-1.png)
 
-![Generated Email](screenshots/Outputs/ii.png)
+![Generated Email](screenshots/Outputs/Formal-2.png)
 
 ## File Structure
 ```
