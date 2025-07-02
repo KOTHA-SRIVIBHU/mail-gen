@@ -62,6 +62,9 @@ PORT=10000
   Hey [Hiring Manager's Name],
   ...
   ```
+![Form Interface](screenshots/i.png)
+
+![Generated Email](screenshots/ii.png)
 
 ## File Structure
 ```
@@ -90,11 +93,7 @@ Access the app at: 🔗 `http://localhost:10000`
 3. Submit the form to generate the email.
 4. Edit or copy the generated subject and body directly from the interface.
 
-### Screenshots
-![Form Interface](screenshots/i.png)
-![Generated Email](screenshots/ii.png)
 
-> **Note**: Ensure screenshot files exist in the `screenshots/` directory or update the paths accordingly.
 
 ## How It Works
 - The app loads email templates from `email_templates.txt` (or uses defaults if not found).
