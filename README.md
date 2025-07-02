@@ -1,150 +1,132 @@
-
-
----
-
 # AI Email Generator using Generative AI (Gemini + LangChain + Flask)
 
-This is a Flask-based web application that generates professional and personalized emails using Google's Gemini AI (`gemini-2.0-flash-001`) through LangChain. It uses email templates which are stored locally and retrieves context using vector search (FAISS) to generate accurate and well-structured emails.
+This Flask-based web application generates professional, personalized emails using Google's Gemini AI (`gemini-2.0-flash-001`) through LangChain. It leverages a Retrieval-Augmented Generation (RAG) approach, retrieving relevant email templates from a FAISS vector store for context-aware email generation.
 
-#  [Live Link](https://mail-gen-ai.onrender.com/) 
-sometimes it will take 50 seconds to load the appication
+🔗 **[Live Demo](https://mail-gen-ai.onrender.com/)** (Note: The application may take up to 50 seconds to load due to hosting constraints.)
 
 ## Features
 
-* Uses Google Gemini (`gemini-2.0-flash-001`) via `langchain-google-genai`
-* Context-aware generation using FAISS vector store
-* Editable and copyable email subject & body
-* Simple UI with BootStrap Framework
-
----
+- Generates emails based on user input (prompt, recipient, tone, and length).
+- Uses RAG with FAISS for context-aware email generation.
+- Supports formal and informal tones with customizable email lengths.
+- Provides an editable and copyable email subject and body.
+- Simple, responsive UI built with Bootstrap.
 
 ## Tech Stack
 
-* **Frontend**: HTML, CSS (Bootstrap)
-* **Backend**: Python, Flask
-* **AI/LLM**: Google Gemini via LangChain
-* **Embeddings**: `models/embedding-001` via `GoogleGenerativeAIEmbeddings`
-* **Vector Store**: FAISS
-* **Environment Management**: `python-dotenv`
+- **Frontend**: HTML, CSS (Bootstrap)
+- **Backend**: Python, Flask
+- **AI/LLM**: Google Gemini (`gemini-2.0-flash-001`) via LangChain
+- **Embeddings**: `models/embedding-001` via `GoogleGenerativeAIEmbeddings`
+- **Vector Store**: FAISS
+- **Environment Management**: `python-dotenv`
 
----
+## Installation & Setup
 
-##  Installation & Setup
-
-### 1. Clone the repository
-
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/ai-mail-generator.git
 cd ai-mail-generator
 ```
 
-### 2. Create and activate a virtual environment
-
+### 2. Create and Activate a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install dependencies
-
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set up `.env` file
-
-Create a `.env` file in the root directory:
-
+### 4. Set Up Environment Variables
+Create a `.env` file in the project root with the following content:
 ```env
 GOOGLE_API_KEY=your_google_api_key
 PORT=10000
 ```
+> **Note**: Obtain a Google API key with access to Gemini and embedding models from [Google AI Studio](https://ai.google.dev/).
 
-> **Note**: Ensure your Google API Key has access to Gemini and Embedding models.
+### 5. Prepare Email Templates
+- Create an `email_templates.txt` file in the project root with sample email templates (optional, as the app includes default templates).
+- Example format for `email_templates.txt`:
+  ```
+  Formal Business Inquiry:
+  Subject: Business Inquiry from [Your Name]
+  Dear [Recipient Name],
+  ...
 
----
+  Informal Job Application:
+  Subject: Application for [Position Name] - Let's Connect!
+  Hey [Hiring Manager's Name],
+  ...
+  ```
 
 ## File Structure
-
 ```
 ├── app.py                    # Main Flask application
 ├── templates/
-│   └── index.html            # UI template
+│   └── index.html            # Web interface template
 ├── email_templates.txt       # Predefined email templates (optional)
 ├── .env                      # Environment variables
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
 ```
 
----
-
 ## Running the App
-
 ```bash
 python app.py
 ```
-
-The app will be live at:
-🔗 `http://localhost:10000/`
-
----
+Access the app at: 🔗 `http://localhost:10000`
 
 ## Example Usage
+1. Open the web interface at `http://localhost:10000`.
+2. Fill in the form:
+   - **Prompt**: Describe the email's purpose (e.g., "Inquire about a product").
+   - **Recipient**: Name of the recipient (e.g., "John Doe").
+   - **Tone**: Select "Formal" or "Informal".
+   - **Length**: Choose "Short" (50-100 words), "Medium" (100-200 words), or "Long" (200-300 words).
+3. Submit the form to generate the email.
+4. Edit or copy the generated subject and body directly from the interface.
 
-1. Provide:
+### Screenshots
+![Form Interface](screenshots/form.png)
+![Generated Email](screenshots/output.png)
 
-   * Your **prompt**
-   * Desired **tone** (e.g., Formal, Informal,Harsh)
-   * Expected **length** (Short, Medium, Long) or (100,200,300) in words 
-   * **Recipient** name
+> **Note**: Ensure screenshot files exist in the `screenshots/` directory or update the paths accordingly.
 
-2. Submit the form to generate the email.
-
-3. You can:
-
-   * Edit the subject/body directly
-   * Copy them with the click of a button
-
-![Alt Text](screenshots/i.png)
-
-![Alt Text](screenshots//ii.png)
-
----
-
-## Behind the Scenes
-
-* `email_templates.txt` is split into chunks using `CharacterTextSplitter`.
-* FAISS indexes these chunks for semantic retrieval.
-* On form submission:
-
-  * Relevant templates are retrieved using the prompt.
-  * Gemini LLM generates a personalized email using a `PromptTemplate`.
-* Output is rendered with a clean Bootstrap interface.
-
----
+## How It Works
+- The app loads email templates from `email_templates.txt` (or uses defaults if not found).
+- Templates are split into chunks using `CharacterTextSplitter` and indexed in a FAISS vector store with `GoogleGenerativeAIEmbeddings`.
+- Upon form submission:
+  - The app retrieves relevant templates using the user's prompt.
+  - The Gemini LLM generates a personalized email via a `PromptTemplate`.
+- The output is displayed in a clean Bootstrap interface with options to edit or copy.
 
 ## Dependencies
+- Flask
+- python-dotenv
+- langchain
+- langchain-google-genai
+- langchain-community
+- faiss-cpu
 
+Install with:
+```bash
+pip install -r requirements.txt
 ```
-Flask
-python-dotenv
-langchain
-langchain-google-genai
-langchain-community
-faiss-cpu
-```
 
-> Install using: `pip install -r requirements.txt`
+## Troubleshooting
+- **Error: "email_templates.txt not found"**: Create the file in the project root or rely on default templates.
+- **Error: API key issues**: Verify your Google API key in `.env` and ensure it has the necessary permissions.
+- **Error: Port conflict**: Update the `PORT` variable in `.env` or `app.py`.
 
+## Resources
+- [LangChain Documentation](https://www.langchain.com/)
+- [Google Generative AI (Gemini)](https://ai.google.dev/)
+- [Bootstrap](https://getbootstrap.com/)
+- [FAISS](https://github.com/facebookresearch/faiss)
 
 ## License
-
-This project is for educational purposes.
-
-
-* [LangChain](https://www.langchain.com/)
-* [Google Generative AI (Gemini)](https://ai.google.dev/)
-* [Bootstrap](https://getbootstrap.com/)
-* [FAISS](https://github.com/facebookresearch/faiss)
-
----
+This project is licensed under the MIT License for educational and non-commercial use.
