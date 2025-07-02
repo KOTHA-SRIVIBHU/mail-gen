@@ -10,14 +10,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__)
+app=Flask(__name__)
 
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+os.environ["GOOGLE_API_KEY"]=os.getenv("GOOGLE_API_KEY")
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-001", temperature=0.7,api_key=os.getenv("GOOGLE_API_KEY"))
+llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash-001",temperature=0.7,api_key=os.getenv("GOOGLE_API_KEY"))
 
 
-embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+embeddings=GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 
 def load_email_templates():
@@ -68,23 +68,23 @@ def load_email_templates():
 
 
 def create_vector_store():
-    template_text = load_email_templates()
-    text_splitter = CharacterTextSplitter(
+    template_text=load_email_templates()
+    text_splitter=CharacterTextSplitter(
         separator="\n\n",
         chunk_size=1000,
         chunk_overlap=200,
         length_function=len,
         is_separator_regex=False,
     )
-    chunks = text_splitter.split_text(template_text)
+    chunks=text_splitter.split_text(template_text)
     return FAISS.from_texts(chunks, embedding=embeddings)
 
 
-vector_store = create_vector_store()
-retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+vector_store=create_vector_store()
+retriever=vector_store.as_retriever(search_kwargs={"k": 3})
 
 
-email_prompt = PromptTemplate(
+email_prompt=PromptTemplate(
     input_variables=["context", "prompt", "recipient", "tone", "length"],
     template="""
     You are a professional email assistant. Use the following email templates as reference:
@@ -114,21 +114,21 @@ email_prompt = PromptTemplate(
     """
 )
 
-email_chain = LLMChain(llm=llm, prompt=email_prompt)
+email_chain=LLMChain(llm=llm, prompt=email_prompt)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
-        prompt_text = request.form['prompt']
-        recipient = request.form['recipient']
-        tone = request.form['tone']
-        length = request.form['length']        
-        relevant_templates = retriever.get_relevant_documents(prompt_text)
-        context = "\n\n".join([doc.page_content for doc in relevant_templates])
+    if request.method=='POST':
+        prompt_text=request.form['prompt']
+        recipient=request.form['recipient']
+        tone=request.form['tone']
+        length=request.form['length']        
+        relevant_templates=retriever.get_relevant_documents(prompt_text)
+        context="\n\n".join([doc.page_content for doc in relevant_templates])
         
         
         try:
-            result = email_chain.run(
+            result=email_chain.run(
                 context=context,
                 prompt=prompt_text,
                 recipient=recipient,
@@ -137,20 +137,20 @@ def index():
             )
             
             
-            subject = result.split("Subject:")[1].split("\n")[0].strip()
-            body = result.split("Body:")[1].strip()
+            subject=result.split("Subject:")[1].split("\n")[0].strip()
+            body=result.split("Body:")[1].strip()
             
             return render_template('index.html', 
                                    email_subject=subject, 
                                    email_body=body)
             
         except Exception as e:
-            error = f"Error generating email: {str(e)}"
+            error=f"Error generating email: {str(e)}"
             return render_template('index.html', error_message=error)
     
     return render_template('index.html')
 
 if __name__ == '__main__':
     
-    port = int(os.environ.get("PORT", 10000))
+    port=int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
