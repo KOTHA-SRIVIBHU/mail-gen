@@ -112,7 +112,7 @@
 .generated-box {
   max-width: 600px;
   margin: 30px auto;
-  background: #fff;
+  background:#1F2937;
   padding: 30px 25px;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -135,7 +135,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 20px;
-  color: #333;
+  color: #fff;
 }
 
     </style>
@@ -148,7 +148,8 @@
       <span class="navbar-brand" href="#"><h4 class="heding">Mail Generator using Genrative AI</h4></span>
     </div>
   </nav>
-<body>
+<body style="background-color: 	#111827 ; color: white;" class="text-light">
+
   <div style="margin-left: 1.5%; padding-top: 2%;" href="#"><h6 class="heding">By Kotha Srivibhu - VIT Chennai</h6></div>
 
   <div class="mgn">
@@ -156,14 +157,14 @@
     <h4 align="center">Please Provide The details</h4>
 
     <form method="POST" class ="frm">
-        <label for="prompt">Enter your prompt:</label><br>
-        <textarea name="prompt" rows="4" cols="50" required></textarea><br>
-        <label for="tone">Tone of the email</label><br>
-        <input type="text" name="tone" required><br><br>
-        <label for="length">Length of the email</label><br>
-        <input type="text" name="length" required><br><br>
-        <label for="recipient">Recipient Name</label><br>
-        <input type="text" name="recipient" required><br><br>
+        <label for="prompt" style="color: white;">Enter your prompt:</label><br>
+        <textarea name="prompt" rows="4" cols="50" required placeholder="Please enter your prompt here"></textarea><br>
+        <label for="tone" style="color: white;" placeholder="Enter the tone (e.g., Formal,Informal,Harsh,Urgent)">Tone of the email</label><br>
+        <input type="text" name="tone" required placeholder="Enter the tone (e.g., Formal,Informal,Harsh,Urgent)"><br><br>
+        <label for="length" style="color: white;" >Length of the email</label><br>
+        <input type="text" name="length" required placeholder="Enter the required length pf the Email (e.g., 100 words, long)"><br><br>
+        <label for="recipient" style="color: white;">Recipient Name</label><br>
+        <input type="text"  name="recipient" required  placeholder="Enter Recipient name"><br><br>
         <input type="submit" value="Generate Email">
     </form>
     {% if email_subject %}
@@ -171,11 +172,11 @@
     <div class="generated-box" style="margin-bottom: 6px;">
       
     
-      <p style="padding: 12px;">Subject:<p>
-      <div id="subject" class="editable" contenteditable="true" style="padding: 12px;">{{ email_subject }}</div><br>
+      <p style="padding: 12px;color: white;">Subject:<p>
+      <div id="subject" class="editable" contenteditable="true" style="padding: 12px;color: #000;">{{ email_subject }}</div><br>
       <button class="btn btn-primary" onclick="copyToClipboard('subject')" >Copy Subject</button><br><br>
-      <p style="padding: 12px;">Body:</p>
-      <div id="body" class="editable" contenteditable="true" style="white-space: pre-wrap;">{{ email_body }}</div><br>
+      <p style="padding: 12px;color: white;">Body:</p>
+      <div id="body" class="editable" contenteditable="true" style="white-space: pre-wrap;color: #000;">{{ email_body }}</div><br>
       <button class="btn btn-primary" onclick="copyToClipboard('body')">Copy Body</button>
     </div>
     {% endif %}    
