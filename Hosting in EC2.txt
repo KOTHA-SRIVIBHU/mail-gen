@@ -1,0 +1,1207 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Aug 28 05:38:57 UTC 2025
+
+  System load:  0.08                Processes:             65
+  Usage of /:   0.1% of 1006.85GB   Users logged in:       0
+  Memory usage: 5%                  IPv4 address for eth0: 172.20.231.221
+  Swap usage:   0%
+
+
+This message is shown once a day. To disable it please create the
+/home/vibhu/.hushlogin file.
+vibhu@Vibhu:~$ ls
+work
+vibhu@Vibhu:~$ cd work
+vibhu@Vibhu:~/work$ ls
+ai-mail-gen.pem  ai-mail-gen.pem:Zone.Identifier  firsttest.pem  firsttest.pem:Zone.Identifier  gen_test  trail
+vibhu@Vibhu:~/work$ chmod 400 ai-mail-gen.pem
+vibhu@Vibhu:~/work$ ssh -i ai-mail-gen.pem ec2-user@13.48.106.222
+The authenticity of host '13.48.106.222 (13.48.106.222)' can't be established.
+ED25519 key fingerprint is SHA256:jwThNA25gArID8Q2vd9qVIVCF6Ypse+U7Zp7cpPw9ro.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '13.48.106.222' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-30-43 ~]$ sudo su
+[root@ip-172-31-30-43 ec2-user]# sudo yum update -y
+Amazon Linux 2023 Kernel Livepatch repository                                                        187 kB/s |  19 kB     00:00
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-30-43 ec2-user]# sudo yum install python3
+Last metadata expiration check: 0:00:26 ago on Thu Aug 28 06:24:58 2025.
+Package python3-3.9.23-1.amzn2023.0.3.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-30-43 ec2-user]# sudo yum install python3-pip -y
+Last metadata expiration check: 0:00:38 ago on Thu Aug 28 06:24:58 2025.
+Dependencies resolved.
+=====================================================================================================================================
+ Package                          Architecture           Version                                   Repository                   Size
+=====================================================================================================================================
+Installing:
+ python3-pip                      noarch                 21.3.1-2.amzn2023.0.13                    amazonlinux                 1.8 M
+Installing weak dependencies:
+ libxcrypt-compat                 x86_64                 4.4.33-7.amzn2023                         amazonlinux                  92 k
+
+Transaction Summary
+=====================================================================================================================================
+Install  2 Packages
+
+Total download size: 1.9 M
+Installed size: 11 M
+Downloading Packages:
+(1/2): libxcrypt-compat-4.4.33-7.amzn2023.x86_64.rpm                                                 2.0 MB/s |  92 kB     00:00
+(2/2): python3-pip-21.3.1-2.amzn2023.0.13.noarch.rpm                                                  20 MB/s | 1.8 MB     00:00
+-------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                 16 MB/s | 1.9 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                             1/1
+  Installing       : libxcrypt-compat-4.4.33-7.amzn2023.x86_64                                                                   1/2
+  Installing       : python3-pip-21.3.1-2.amzn2023.0.13.noarch                                                                   2/2
+  Running scriptlet: python3-pip-21.3.1-2.amzn2023.0.13.noarch                                                                   2/2
+  Verifying        : libxcrypt-compat-4.4.33-7.amzn2023.x86_64                                                                   1/2
+  Verifying        : python3-pip-21.3.1-2.amzn2023.0.13.noarch                                                                   2/2
+
+Installed:
+  libxcrypt-compat-4.4.33-7.amzn2023.x86_64                         python3-pip-21.3.1-2.amzn2023.0.13.noarch
+
+Complete!
+[root@ip-172-31-30-43 ec2-user]# sudo yum install git
+Last metadata expiration check: 0:00:53 ago on Thu Aug 28 06:24:58 2025.
+Dependencies resolved.
+=====================================================================================================================================
+ Package                          Architecture           Version                                   Repository                   Size
+=====================================================================================================================================
+Installing:
+ git                              x86_64                 2.50.1-1.amzn2023.0.1                     amazonlinux                  53 k
+Installing dependencies:
+ git-core                         x86_64                 2.50.1-1.amzn2023.0.1                     amazonlinux                 4.9 M
+ git-core-doc                     noarch                 2.50.1-1.amzn2023.0.1                     amazonlinux                 2.8 M
+ perl-Error                       noarch                 1:0.17029-5.amzn2023.0.2                  amazonlinux                  41 k
+ perl-File-Find                   noarch                 1.37-477.amzn2023.0.7                     amazonlinux                  25 k
+ perl-Git                         noarch                 2.50.1-1.amzn2023.0.1                     amazonlinux                  41 k
+ perl-TermReadKey                 x86_64                 2.38-9.amzn2023.0.2                       amazonlinux                  36 k
+ perl-lib                         x86_64                 0.65-477.amzn2023.0.7                     amazonlinux                  15 k
+
+Transaction Summary
+=====================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.9 M
+Installed size: 41 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/8): git-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                          1.5 MB/s |  53 kB     00:00
+(2/8): git-core-doc-2.50.1-1.amzn2023.0.1.noarch.rpm                                                  47 MB/s | 2.8 MB     00:00
+(3/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                  1.4 MB/s |  41 kB     00:00
+(4/8): git-core-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                      54 MB/s | 4.9 MB     00:00
+(5/8): perl-File-Find-1.37-477.amzn2023.0.7.noarch.rpm                                               749 kB/s |  25 kB     00:00
+(6/8): perl-Git-2.50.1-1.amzn2023.0.1.noarch.rpm                                                     1.2 MB/s |  41 kB     00:00
+(7/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                               1.7 MB/s |  36 kB     00:00
+(8/8): perl-lib-0.65-477.amzn2023.0.7.x86_64.rpm                                                     657 kB/s |  15 kB     00:00
+-------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                 52 MB/s | 7.9 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                             1/1
+  Installing       : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                       1/8
+  Installing       : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                   2/8
+  Installing       : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                       3/8
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 4/8
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                 5/8
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  6/8
+  Installing       : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                       7/8
+  Installing       : git-2.50.1-1.amzn2023.0.1.x86_64                                                                            8/8
+  Running scriptlet: git-2.50.1-1.amzn2023.0.1.x86_64                                                                            8/8
+  Verifying        : git-2.50.1-1.amzn2023.0.1.x86_64                                                                            1/8
+  Verifying        : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                       2/8
+  Verifying        : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                   3/8
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                  4/8
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                 5/8
+  Verifying        : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                       6/8
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                 7/8
+  Verifying        : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                       8/8
+
+Installed:
+  git-2.50.1-1.amzn2023.0.1.x86_64            git-core-2.50.1-1.amzn2023.0.1.x86_64       git-core-doc-2.50.1-1.amzn2023.0.1.noarch
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch  perl-File-Find-1.37-477.amzn2023.0.7.noarch perl-Git-2.50.1-1.amzn2023.0.1.noarch
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64 perl-lib-0.65-477.amzn2023.0.7.x86_64
+
+Complete!
+[root@ip-172-31-30-43 ec2-user]# git clone https://github.com/KOTHA-SRIVIBHU/mail-gen.git
+Cloning into 'mail-gen'...
+remote: Enumerating objects: 96, done.
+remote: Counting objects: 100% (96/96), done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 96 (delta 40), reused 77 (delta 21), pack-reused 0 (from 0)
+Receiving objects: 100% (96/96), 806.25 KiB | 4.53 MiB/s, done.
+Resolving deltas: 100% (40/40), done.
+[root@ip-172-31-30-43 ec2-user]# ls
+mail-gen
+[root@ip-172-31-30-43 ec2-user]# cd mail-gen
+[root@ip-172-31-30-43 mail-gen]# pip install -r requirements.txt
+Collecting flask
+  Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+     |████████████████████████████████| 103 kB 14.0 MB/s
+Collecting langchain-google-genai
+  Downloading langchain_google_genai-2.1.10-py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 6.8 MB/s
+Collecting langchain
+  Downloading langchain-0.3.27-py3-none-any.whl (1.0 MB)
+     |████████████████████████████████| 1.0 MB 23.3 MB/s
+Collecting langchain-community
+  Downloading langchain_community-0.3.29-py3-none-any.whl (2.5 MB)
+     |████████████████████████████████| 2.5 MB 102.2 MB/s
+Collecting langchain-text-splitters
+  Downloading langchain_text_splitters-0.3.9-py3-none-any.whl (33 kB)
+Collecting faiss-cpu
+  Downloading faiss_cpu-1.12.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.4 MB)
+     |████████████████████████████████| 31.4 MB 53.6 MB/s
+Collecting python-dotenv
+  Downloading python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+Collecting google-generativeai
+  Downloading google_generativeai-0.8.5-py3-none-any.whl (155 kB)
+     |████████████████████████████████| 155 kB 115.4 MB/s
+Collecting gunicorn
+  Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+     |████████████████████████████████| 85 kB 6.8 MB/s
+Collecting werkzeug>=3.1.0
+  Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+     |████████████████████████████████| 224 kB 132.1 MB/s
+Collecting importlib-metadata>=3.6.0
+  Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Collecting jinja2>=3.1.2
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+     |████████████████████████████████| 134 kB 136.2 MB/s
+Collecting markupsafe>=2.1.1
+  Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Collecting itsdangerous>=2.2.0
+  Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting click>=8.1.3
+  Downloading click-8.1.8-py3-none-any.whl (98 kB)
+     |████████████████████████████████| 98 kB 14.0 MB/s
+Collecting blinker>=1.9.0
+  Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Collecting google-ai-generativelanguage<0.7.0,>=0.6.18
+  Downloading google_ai_generativelanguage-0.6.18-py3-none-any.whl (1.4 MB)
+     |████████████████████████████████| 1.4 MB 124.7 MB/s
+Collecting filetype<2.0.0,>=1.2.0
+  Downloading filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Collecting langchain-core<0.4.0,>=0.3.75
+  Downloading langchain_core-0.3.75-py3-none-any.whl (443 kB)
+     |████████████████████████████████| 443 kB 119.5 MB/s
+Collecting pydantic<3,>=2
+  Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+     |████████████████████████████████| 444 kB 60.3 MB/s
+Requirement already satisfied: PyYAML>=5.3 in /usr/lib64/python3.9/site-packages (from langchain->-r requirements.txt (line 3)) (5.4.1)
+Collecting langsmith>=0.1.17
+  Downloading langsmith-0.4.20-py3-none-any.whl (377 kB)
+     |████████████████████████████████| 377 kB 64.0 MB/s
+Requirement already satisfied: requests<3,>=2 in /usr/lib/python3.9/site-packages (from langchain->-r requirements.txt (line 3)) (2.25.1)
+Collecting async-timeout<5.0.0,>=4.0.0
+  Downloading async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Collecting SQLAlchemy<3,>=1.4
+  Downloading sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+     |████████████████████████████████| 3.2 MB 62.6 MB/s
+Collecting requests<3,>=2
+  Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+     |████████████████████████████████| 64 kB 7.5 MB/s
+Collecting tenacity!=8.4.0,<10,>=8.1.0
+  Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+Collecting numpy>=1.26.2
+  Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+     |████████████████████████████████| 19.5 MB 60.2 MB/s
+Collecting aiohttp<4.0.0,>=3.8.3
+  Downloading aiohttp-3.12.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+     |████████████████████████████████| 1.6 MB 63.5 MB/s
+Collecting dataclasses-json<0.7,>=0.6.7
+  Downloading dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Collecting httpx-sse<1.0.0,>=0.4.0
+  Downloading httpx_sse-0.4.1-py3-none-any.whl (8.1 kB)
+Collecting pydantic-settings<3.0.0,>=2.10.1
+  Downloading pydantic_settings-2.10.1-py3-none-any.whl (45 kB)
+     |████████████████████████████████| 45 kB 9.3 MB/s
+Collecting packaging
+  Downloading packaging-25.0-py3-none-any.whl (66 kB)
+     |████████████████████████████████| 66 kB 12.4 MB/s
+Collecting protobuf
+  Downloading protobuf-6.32.0-cp39-abi3-manylinux2014_x86_64.whl (322 kB)
+     |████████████████████████████████| 322 kB 78.6 MB/s
+Collecting google-generativeai
+  Downloading google_generativeai-0.8.4-py3-none-any.whl (175 kB)
+     |████████████████████████████████| 175 kB 47.8 MB/s
+  Downloading google_generativeai-0.8.3-py3-none-any.whl (160 kB)
+     |████████████████████████████████| 160 kB 105.5 MB/s
+Collecting google-auth>=2.15.0
+  Downloading google_auth-2.40.3-py2.py3-none-any.whl (216 kB)
+     |████████████████████████████████| 216 kB 113.5 MB/s
+Collecting typing-extensions
+  Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+     |████████████████████████████████| 44 kB 5.6 MB/s
+Collecting google-generativeai
+  Downloading google_generativeai-0.8.2-py3-none-any.whl (153 kB)
+     |████████████████████████████████| 153 kB 100.5 MB/s
+  Downloading google_generativeai-0.8.1-py3-none-any.whl (165 kB)
+     |████████████████████████████████| 165 kB 117.6 MB/s
+  Downloading google_generativeai-0.8.0-py3-none-any.whl (163 kB)
+     |████████████████████████████████| 163 kB 113.0 MB/s
+  Downloading google_generativeai-0.7.2-py3-none-any.whl (164 kB)
+     |████████████████████████████████| 164 kB 109.4 MB/s
+Collecting google-api-core
+  Downloading google_api_core-2.25.1-py3-none-any.whl (160 kB)
+     |████████████████████████████████| 160 kB 74.2 MB/s
+Collecting google-generativeai
+  Downloading google_generativeai-0.7.1-py3-none-any.whl (163 kB)
+     |████████████████████████████████| 163 kB 82.7 MB/s
+  Downloading google_generativeai-0.7.0-py3-none-any.whl (163 kB)
+     |████████████████████████████████| 163 kB 79.6 MB/s
+  Downloading google_generativeai-0.6.0-py3-none-any.whl (158 kB)
+     |████████████████████████████████| 158 kB 83.4 MB/s
+  Downloading google_generativeai-0.5.4-py3-none-any.whl (150 kB)
+     |████████████████████████████████| 150 kB 77.1 MB/s
+  Downloading google_generativeai-0.5.3-py3-none-any.whl (150 kB)
+     |████████████████████████████████| 150 kB 120.6 MB/s
+  Downloading google_generativeai-0.5.2-py3-none-any.whl (146 kB)
+     |████████████████████████████████| 146 kB 120.9 MB/s
+  Downloading google_generativeai-0.5.1-py3-none-any.whl (142 kB)
+     |████████████████████████████████| 142 kB 63.7 MB/s
+  Downloading google_generativeai-0.5.0-py3-none-any.whl (142 kB)
+     |████████████████████████████████| 142 kB 110.0 MB/s
+  Downloading google_generativeai-0.4.1-py3-none-any.whl (137 kB)
+     |████████████████████████████████| 137 kB 75.7 MB/s
+  Downloading google_generativeai-0.4.0-py3-none-any.whl (137 kB)
+     |████████████████████████████████| 137 kB 123.1 MB/s
+  Downloading google_generativeai-0.3.2-py3-none-any.whl (146 kB)
+     |████████████████████████████████| 146 kB 122.5 MB/s
+  Downloading google_generativeai-0.3.1-py3-none-any.whl (146 kB)
+     |████████████████████████████████| 146 kB 92.8 MB/s
+  Downloading google_generativeai-0.3.0-py3-none-any.whl (145 kB)
+     |████████████████████████████████| 145 kB 120.2 MB/s
+  Downloading google_generativeai-0.2.2-py3-none-any.whl (133 kB)
+     |████████████████████████████████| 133 kB 126.8 MB/s
+  Downloading google_generativeai-0.2.1-py3-none-any.whl (130 kB)
+     |████████████████████████████████| 130 kB 31.0 MB/s
+  Downloading google_generativeai-0.2.0-py3-none-any.whl (130 kB)
+     |████████████████████████████████| 130 kB 115.7 MB/s
+  Downloading google_generativeai-0.1.0-py3-none-any.whl (122 kB)
+     |████████████████████████████████| 122 kB 98.2 MB/s
+INFO: pip is looking at multiple versions of python-dotenv to determine which version is compatible with other requirements. This could take a while.
+Collecting python-dotenv
+  Downloading python_dotenv-1.1.0-py3-none-any.whl (20 kB)
+INFO: pip is looking at multiple versions of faiss-cpu to determine which version is compatible with other requirements. This could take a while.
+Collecting faiss-cpu
+  Downloading faiss_cpu-1.11.0.post1-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.3 MB)
+     |████████████████████████████████| 31.3 MB 675 kB/s
+INFO: pip is looking at multiple versions of langchain-text-splitters to determine which version is compatible with other requirements. This could take a while.
+INFO: pip is looking at multiple versions of langchain-community to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain-community
+  Downloading langchain_community-0.3.28-py3-none-any.whl (2.5 MB)
+     |████████████████████████████████| 2.5 MB 71.4 MB/s
+INFO: pip is looking at multiple versions of langchain to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain
+  Downloading langchain-0.3.26-py3-none-any.whl (1.0 MB)
+     |████████████████████████████████| 1.0 MB 120.8 MB/s
+INFO: pip is looking at multiple versions of langchain-google-genai to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain-google-genai
+  Downloading langchain_google_genai-2.1.9-py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 16.3 MB/s
+  Downloading langchain_google_genai-2.1.8-py3-none-any.whl (47 kB)
+     |████████████████████████████████| 47 kB 13.6 MB/s
+  Downloading langchain_google_genai-2.1.7-py3-none-any.whl (47 kB)
+     |████████████████████████████████| 47 kB 13.3 MB/s
+  Downloading langchain_google_genai-2.1.6-py3-none-any.whl (47 kB)
+     |████████████████████████████████| 47 kB 13.3 MB/s
+  Downloading langchain_google_genai-2.1.5-py3-none-any.whl (44 kB)
+     |████████████████████████████████| 44 kB 8.4 MB/s
+  Downloading langchain_google_genai-2.1.4-py3-none-any.whl (44 kB)
+     |████████████████████████████████| 44 kB 7.6 MB/s
+  Downloading langchain_google_genai-2.1.3-py3-none-any.whl (43 kB)
+     |████████████████████████████████| 43 kB 6.2 MB/s
+INFO: pip is looking at multiple versions of langchain-google-genai to determine which version is compatible with other requirements. This could take a while.
+  Downloading langchain_google_genai-2.1.2-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 2.4 MB/s
+  Downloading langchain_google_genai-2.1.1-py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB 13.9 MB/s
+  Downloading langchain_google_genai-2.1.0-py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB 13.5 MB/s
+  Downloading langchain_google_genai-2.0.11-py3-none-any.whl (39 kB)
+  Downloading langchain_google_genai-2.0.10-py3-none-any.whl (41 kB)
+     |████████████████████████████████| 41 kB 1.8 MB/s
+Collecting google-ai-generativelanguage==0.6.15
+  Downloading google_ai_generativelanguage-0.6.15-py3-none-any.whl (1.3 MB)
+     |████████████████████████████████| 1.3 MB 99.0 MB/s
+Collecting google-api-python-client
+  Downloading google_api_python_client-2.179.0-py3-none-any.whl (14.0 MB)
+     |████████████████████████████████| 14.0 MB 65.7 MB/s
+Collecting tqdm
+  Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+     |████████████████████████████████| 78 kB 19.9 MB/s
+Collecting proto-plus<2.0.0dev,>=1.22.3
+  Downloading proto_plus-1.26.1-py3-none-any.whl (50 kB)
+     |████████████████████████████████| 50 kB 20.7 MB/s
+Collecting protobuf
+  Downloading protobuf-5.29.5-cp38-abi3-manylinux2014_x86_64.whl (319 kB)
+     |████████████████████████████████| 319 kB 119.3 MB/s
+Collecting aiohappyeyeballs>=2.5.0
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Collecting yarl<2.0,>=1.17.0
+  Downloading yarl-1.20.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (327 kB)
+     |████████████████████████████████| 327 kB 57.0 MB/s
+Collecting frozenlist>=1.1.1
+  Downloading frozenlist-1.7.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)
+     |████████████████████████████████| 225 kB 90.1 MB/s
+Collecting multidict<7.0,>=4.5
+  Downloading multidict-6.6.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (239 kB)
+     |████████████████████████████████| 239 kB 103.8 MB/s
+Collecting propcache>=0.2.0
+  Downloading propcache-0.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (200 kB)
+     |████████████████████████████████| 200 kB 104.4 MB/s
+Collecting aiosignal>=1.4.0
+  Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Requirement already satisfied: attrs>=17.3.0 in /usr/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community->-r requirements.txt (line 4)) (20.3.0)
+Collecting marshmallow<4.0.0,>=3.18.0
+  Downloading marshmallow-3.26.1-py3-none-any.whl (50 kB)
+     |████████████████████████████████| 50 kB 14.2 MB/s
+Collecting typing-inspect<1,>=0.4.0
+  Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Collecting rsa<5,>=3.1.4
+  Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+     |████████████████████████████████| 181 kB 127.8 MB/s
+Collecting cachetools<6.0,>=2.0.0
+  Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+Collecting zipp>=3.20
+  Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Collecting jsonpatch<2.0,>=1.33
+  Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Collecting requests-toolbelt>=1.0.0
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+     |████████████████████████████████| 54 kB 5.9 MB/s
+Collecting orjson>=3.9.14
+  Downloading orjson-3.11.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (132 kB)
+     |████████████████████████████████| 132 kB 122.9 MB/s
+Collecting zstandard>=0.23.0
+  Downloading zstandard-0.24.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.6 MB)
+     |████████████████████████████████| 5.6 MB 100.1 MB/s
+Collecting httpx<1,>=0.23.0
+  Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+     |████████████████████████████████| 73 kB 5.9 MB/s
+Collecting typing-inspection>=0.4.0
+  Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Collecting pydantic-core==2.33.2
+  Downloading pydantic_core-2.33.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+     |████████████████████████████████| 2.0 MB 113.8 MB/s
+Collecting annotated-types>=0.6.0
+  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+     |████████████████████████████████| 161 kB 110.4 MB/s
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (1.25.10)
+Collecting charset_normalizer<4,>=2
+  Downloading charset_normalizer-3.4.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
+     |████████████████████████████████| 152 kB 81.0 MB/s
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (2.10)
+Collecting greenlet>=1
+  Downloading greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (582 kB)
+     |████████████████████████████████| 582 kB 81.1 MB/s
+Collecting googleapis-common-protos<2.0.0,>=1.56.2
+  Downloading googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB)
+     |████████████████████████████████| 294 kB 84.1 MB/s
+Collecting httplib2<1.0.0,>=0.19.0
+  Downloading httplib2-0.22.0-py3-none-any.whl (96 kB)
+     |████████████████████████████████| 96 kB 12.0 MB/s
+Collecting uritemplate<5,>=3.0.1
+  Downloading uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Collecting google-auth-httplib2<1.0.0,>=0.2.0
+  Downloading google_auth_httplib2-0.2.0-py2.py3-none-any.whl (9.3 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2
+  Downloading grpcio_status-1.74.0-py3-none-any.whl (14 kB)
+Collecting grpcio<2.0.0,>=1.33.2
+  Downloading grpcio-1.74.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.2 MB)
+     |████████████████████████████████| 6.2 MB 43.8 MB/s
+Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+  Downloading pyparsing-3.2.3-py3-none-any.whl (111 kB)
+     |████████████████████████████████| 111 kB 86.7 MB/s
+Collecting anyio
+  Downloading anyio-4.10.0-py3-none-any.whl (107 kB)
+     |████████████████████████████████| 107 kB 123.9 MB/s
+Collecting httpcore==1.*
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+     |████████████████████████████████| 78 kB 14.0 MB/s
+Collecting h11>=0.16
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Requirement already satisfied: jsonpointer>=1.9 in /usr/lib/python3.9/site-packages (from jsonpatch<2.0,>=1.33->langchain-core<0.4.0,>=0.3.75->langchain-google-genai->-r requirements.txt (line 2)) (2.0)
+Collecting pyasn1<0.7.0,>=0.6.1
+  Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+     |████████████████████████████████| 83 kB 3.1 MB/s
+Collecting mypy-extensions>=0.3.0
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2
+  Downloading grpcio_status-1.73.1-py3-none-any.whl (14 kB)
+  Downloading grpcio_status-1.73.0-py3-none-any.whl (14 kB)
+  Downloading grpcio_status-1.72.2-py3-none-any.whl (14 kB)
+  Downloading grpcio_status-1.72.1-py3-none-any.whl (14 kB)
+  Downloading grpcio_status-1.71.2-py3-none-any.whl (14 kB)
+Collecting sniffio>=1.1
+  Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting exceptiongroup>=1.0.2
+  Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
+Installing collected packages: typing-extensions, sniffio, pyasn1, h11, exceptiongroup, charset-normalizer, certifi, typing-inspection, rsa, requests, pydantic-core, pyasn1-modules, protobuf, httpcore, cachetools, anyio, annotated-types, zstandard, requests-toolbelt, pyparsing, pydantic, proto-plus, packaging, orjson, httpx, grpcio, googleapis-common-protos, google-auth, tenacity, langsmith, jsonpatch, httplib2, grpcio-status, google-api-core, uritemplate, propcache, mypy-extensions, multidict, langchain-core, greenlet, google-auth-httplib2, frozenlist, zipp, yarl, typing-inspect, tqdm, SQLAlchemy, python-dotenv, marshmallow, markupsafe, langchain-text-splitters, google-api-python-client, google-ai-generativelanguage, async-timeout, aiosignal, aiohappyeyeballs, werkzeug, pydantic-settings, numpy, langchain, jinja2, itsdangerous, importlib-metadata, httpx-sse, google-generativeai, filetype, dataclasses-json, click, blinker, aiohttp, langchain-google-genai, langchain-community, gunicorn, flask, faiss-cpu
+  Attempting uninstall: requests
+    Found existing installation: requests 2.25.1
+ERROR: Cannot uninstall requests 2.25.1, RECORD file not found. Hint: The package was installed by rpm.
+[root@ip-172-31-30-43 mail-gen]# ls
+README.md  app.py  email_templates.txt  requirements.txt  screenshots  templates
+[root@ip-172-31-30-43 mail-gen]# nana .env
+bash: nana: command not found
+[root@ip-172-31-30-43 mail-gen]# nano .env
+[root@ip-172-31-30-43 mail-gen]# python3 app.py
+Traceback (most recent call last):
+  File "/home/ec2-user/mail-gen/app.py", line 1, in <module>
+    from flask import Flask, render_template, request
+ModuleNotFoundError: No module named 'flask'
+[root@ip-172-31-30-43 mail-gen]# nano requirements.txt
+[root@ip-172-31-30-43 mail-gen]# nano requirements.txt
+[root@ip-172-31-30-43 mail-gen]# pip install -r requirements.txt
+Collecting flask
+  Using cached flask-3.1.2-py3-none-any.whl (103 kB)
+Collecting langchain-google-genai
+  Using cached langchain_google_genai-2.1.10-py3-none-any.whl (49 kB)
+Collecting langchain
+  Using cached langchain-0.3.27-py3-none-any.whl (1.0 MB)
+Collecting langchain-community
+  Using cached langchain_community-0.3.29-py3-none-any.whl (2.5 MB)
+Collecting langchain-text-splitters
+  Using cached langchain_text_splitters-0.3.9-py3-none-any.whl (33 kB)
+Collecting faiss-cpu
+  Using cached faiss_cpu-1.12.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.4 MB)
+Collecting python-dotenv
+  Using cached python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+Collecting google-generativeai
+  Using cached google_generativeai-0.8.5-py3-none-any.whl (155 kB)
+Collecting gunicorn
+  Using cached gunicorn-23.0.0-py3-none-any.whl (85 kB)
+Collecting blinker>=1.9.0
+  Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Collecting importlib-metadata>=3.6.0
+  Using cached importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Collecting werkzeug>=3.1.0
+  Using cached werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Collecting markupsafe>=2.1.1
+  Using cached MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Collecting click>=8.1.3
+  Using cached click-8.1.8-py3-none-any.whl (98 kB)
+Collecting jinja2>=3.1.2
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting itsdangerous>=2.2.0
+  Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting google-ai-generativelanguage<0.7.0,>=0.6.18
+  Using cached google_ai_generativelanguage-0.6.18-py3-none-any.whl (1.4 MB)
+Collecting pydantic<3,>=2
+  Using cached pydantic-2.11.7-py3-none-any.whl (444 kB)
+Collecting langchain-core<0.4.0,>=0.3.75
+  Using cached langchain_core-0.3.75-py3-none-any.whl (443 kB)
+Collecting filetype<2.0.0,>=1.2.0
+  Using cached filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Requirement already satisfied: requests<3,>=2 in /usr/lib/python3.9/site-packages (from langchain->-r requirements.txt (line 3)) (2.25.1)
+Collecting async-timeout<5.0.0,>=4.0.0
+  Using cached async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Collecting SQLAlchemy<3,>=1.4
+  Using cached sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+Collecting langsmith>=0.1.17
+  Using cached langsmith-0.4.20-py3-none-any.whl (377 kB)
+Requirement already satisfied: PyYAML>=5.3 in /usr/lib64/python3.9/site-packages (from langchain->-r requirements.txt (line 3)) (5.4.1)
+Collecting aiohttp<4.0.0,>=3.8.3
+  Using cached aiohttp-3.12.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting pydantic-settings<3.0.0,>=2.10.1
+  Using cached pydantic_settings-2.10.1-py3-none-any.whl (45 kB)
+Collecting tenacity!=8.4.0,<10,>=8.1.0
+  Using cached tenacity-9.1.2-py3-none-any.whl (28 kB)
+Collecting dataclasses-json<0.7,>=0.6.7
+  Using cached dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Collecting numpy>=1.26.2
+  Using cached numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+Collecting httpx-sse<1.0.0,>=0.4.0
+  Using cached httpx_sse-0.4.1-py3-none-any.whl (8.1 kB)
+Collecting requests<3,>=2
+  Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Collecting packaging
+  Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Collecting tqdm
+  Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Collecting protobuf
+  Using cached protobuf-6.32.0-cp39-abi3-manylinux2014_x86_64.whl (322 kB)
+Collecting google-auth>=2.15.0
+  Using cached google_auth-2.40.3-py2.py3-none-any.whl (216 kB)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.9/site-packages (from google-generativeai->-r requirements.txt (line 8)) (4.15.0)
+Collecting google-api-core
+  Using cached google_api_core-2.25.1-py3-none-any.whl (160 kB)
+Collecting google-generativeai
+  Using cached google_generativeai-0.8.4-py3-none-any.whl (175 kB)
+  Using cached google_generativeai-0.8.3-py3-none-any.whl (160 kB)
+  Using cached google_generativeai-0.8.2-py3-none-any.whl (153 kB)
+  Using cached google_generativeai-0.8.1-py3-none-any.whl (165 kB)
+  Using cached google_generativeai-0.8.0-py3-none-any.whl (163 kB)
+  Using cached google_generativeai-0.7.2-py3-none-any.whl (164 kB)
+Collecting google-api-python-client
+  Using cached google_api_python_client-2.179.0-py3-none-any.whl (14.0 MB)
+Collecting google-generativeai
+  Using cached google_generativeai-0.7.1-py3-none-any.whl (163 kB)
+  Using cached google_generativeai-0.7.0-py3-none-any.whl (163 kB)
+  Using cached google_generativeai-0.6.0-py3-none-any.whl (158 kB)
+  Using cached google_generativeai-0.5.4-py3-none-any.whl (150 kB)
+  Using cached google_generativeai-0.5.3-py3-none-any.whl (150 kB)
+  Using cached google_generativeai-0.5.2-py3-none-any.whl (146 kB)
+  Using cached google_generativeai-0.5.1-py3-none-any.whl (142 kB)
+  Using cached google_generativeai-0.5.0-py3-none-any.whl (142 kB)
+  Using cached google_generativeai-0.4.1-py3-none-any.whl (137 kB)
+  Using cached google_generativeai-0.4.0-py3-none-any.whl (137 kB)
+  Using cached google_generativeai-0.3.2-py3-none-any.whl (146 kB)
+  Using cached google_generativeai-0.3.1-py3-none-any.whl (146 kB)
+  Using cached google_generativeai-0.3.0-py3-none-any.whl (145 kB)
+  Using cached google_generativeai-0.2.2-py3-none-any.whl (133 kB)
+  Using cached google_generativeai-0.2.1-py3-none-any.whl (130 kB)
+  Using cached google_generativeai-0.2.0-py3-none-any.whl (130 kB)
+  Using cached google_generativeai-0.1.0-py3-none-any.whl (122 kB)
+INFO: pip is looking at multiple versions of python-dotenv to determine which version is compatible with other requirements. This could take a while.
+Collecting python-dotenv
+  Using cached python_dotenv-1.1.0-py3-none-any.whl (20 kB)
+INFO: pip is looking at multiple versions of faiss-cpu to determine which version is compatible with other requirements. This could take a while.
+Collecting faiss-cpu
+  Using cached faiss_cpu-1.11.0.post1-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.3 MB)
+INFO: pip is looking at multiple versions of langchain-text-splitters to determine which version is compatible with other requirements. This could take a while.
+INFO: pip is looking at multiple versions of langchain-community to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain-community
+  Using cached langchain_community-0.3.28-py3-none-any.whl (2.5 MB)
+INFO: pip is looking at multiple versions of langchain to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain
+  Using cached langchain-0.3.26-py3-none-any.whl (1.0 MB)
+INFO: pip is looking at multiple versions of langchain-google-genai to determine which version is compatible with other requirements. This could take a while.
+Collecting langchain-google-genai
+  Using cached langchain_google_genai-2.1.9-py3-none-any.whl (49 kB)
+  Using cached langchain_google_genai-2.1.8-py3-none-any.whl (47 kB)
+  Using cached langchain_google_genai-2.1.7-py3-none-any.whl (47 kB)
+  Using cached langchain_google_genai-2.1.6-py3-none-any.whl (47 kB)
+  Using cached langchain_google_genai-2.1.5-py3-none-any.whl (44 kB)
+  Using cached langchain_google_genai-2.1.4-py3-none-any.whl (44 kB)
+  Using cached langchain_google_genai-2.1.3-py3-none-any.whl (43 kB)
+INFO: pip is looking at multiple versions of langchain-google-genai to determine which version is compatible with other requirements. This could take a while.
+  Using cached langchain_google_genai-2.1.2-py3-none-any.whl (42 kB)
+  Using cached langchain_google_genai-2.1.1-py3-none-any.whl (40 kB)
+  Using cached langchain_google_genai-2.1.0-py3-none-any.whl (40 kB)
+  Using cached langchain_google_genai-2.0.11-py3-none-any.whl (39 kB)
+  Using cached langchain_google_genai-2.0.10-py3-none-any.whl (41 kB)
+Collecting google-ai-generativelanguage==0.6.15
+  Using cached google_ai_generativelanguage-0.6.15-py3-none-any.whl (1.3 MB)
+Collecting proto-plus<2.0.0dev,>=1.22.3
+  Using cached proto_plus-1.26.1-py3-none-any.whl (50 kB)
+Collecting protobuf
+  Using cached protobuf-5.29.5-cp38-abi3-manylinux2014_x86_64.whl (319 kB)
+Collecting aiohappyeyeballs>=2.5.0
+  Using cached aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Collecting multidict<7.0,>=4.5
+  Using cached multidict-6.6.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (239 kB)
+Collecting propcache>=0.2.0
+  Using cached propcache-0.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (200 kB)
+Collecting frozenlist>=1.1.1
+  Using cached frozenlist-1.7.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)
+Collecting yarl<2.0,>=1.17.0
+  Using cached yarl-1.20.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (327 kB)
+Requirement already satisfied: attrs>=17.3.0 in /usr/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community->-r requirements.txt (line 4)) (20.3.0)
+Collecting aiosignal>=1.4.0
+  Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting marshmallow<4.0.0,>=3.18.0
+  Using cached marshmallow-3.26.1-py3-none-any.whl (50 kB)
+Collecting typing-inspect<1,>=0.4.0
+  Using cached typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Collecting pyasn1-modules>=0.2.1
+  Using cached pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Requirement already satisfied: rsa<5,>=3.1.4 in /usr/local/lib/python3.9/site-packages (from google-auth>=2.15.0->google-generativeai->-r requirements.txt (line 8)) (4.9.1)
+Collecting cachetools<6.0,>=2.0.0
+  Using cached cachetools-5.5.2-py3-none-any.whl (10 kB)
+Collecting zipp>=3.20
+  Using cached zipp-3.23.0-py3-none-any.whl (10 kB)
+Collecting jsonpatch<2.0,>=1.33
+  Using cached jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Collecting httpx<1,>=0.23.0
+  Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Collecting requests-toolbelt>=1.0.0
+  Using cached requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Collecting orjson>=3.9.14
+  Using cached orjson-3.11.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (132 kB)
+Collecting zstandard>=0.23.0
+  Using cached zstandard-0.24.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.6 MB)
+Requirement already satisfied: typing-inspection>=0.4.0 in /usr/local/lib/python3.9/site-packages (from pydantic<3,>=2->langchain-google-genai->-r requirements.txt (line 2)) (0.4.1)
+Collecting pydantic-core==2.33.2
+  Using cached pydantic_core-2.33.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Collecting annotated-types>=0.6.0
+  Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (2025.8.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (1.25.10)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (2.10)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib64/python3.9/site-packages (from requests<3,>=2->langchain->-r requirements.txt (line 3)) (3.4.3)
+Collecting greenlet>=1
+  Using cached greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (582 kB)
+Collecting googleapis-common-protos<2.0.0,>=1.56.2
+  Using cached googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB)
+Collecting google-auth-httplib2<1.0.0,>=0.2.0
+  Using cached google_auth_httplib2-0.2.0-py2.py3-none-any.whl (9.3 kB)
+Collecting uritemplate<5,>=3.0.1
+  Using cached uritemplate-4.2.0-py3-none-any.whl (11 kB)
+Collecting httplib2<1.0.0,>=0.19.0
+  Using cached httplib2-0.22.0-py3-none-any.whl (96 kB)
+Collecting grpcio<2.0.0,>=1.33.2
+  Using cached grpcio-1.74.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.2 MB)
+Collecting grpcio-status<2.0.0,>=1.33.2
+  Using cached grpcio_status-1.74.0-py3-none-any.whl (14 kB)
+Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+  Using cached pyparsing-3.2.3-py3-none-any.whl (111 kB)
+Collecting httpcore==1.*
+  Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Collecting anyio
+  Using cached anyio-4.10.0-py3-none-any.whl (107 kB)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.9/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain->-r requirements.txt (line 3)) (0.16.0)
+Requirement already satisfied: jsonpointer>=1.9 in /usr/lib/python3.9/site-packages (from jsonpatch<2.0,>=1.33->langchain-core<0.4.0,>=0.3.75->langchain-google-genai->-r requirements.txt (line 2)) (2.0)
+Requirement already satisfied: pyasn1<0.7.0,>=0.6.1 in /usr/local/lib/python3.9/site-packages (from pyasn1-modules>=0.2.1->google-auth>=2.15.0->google-generativeai->-r requirements.txt (line 8)) (0.6.1)
+Collecting mypy-extensions>=0.3.0
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2
+  Using cached grpcio_status-1.73.1-py3-none-any.whl (14 kB)
+  Using cached grpcio_status-1.73.0-py3-none-any.whl (14 kB)
+  Using cached grpcio_status-1.72.2-py3-none-any.whl (14 kB)
+  Using cached grpcio_status-1.72.1-py3-none-any.whl (14 kB)
+  Using cached grpcio_status-1.71.2-py3-none-any.whl (14 kB)
+Requirement already satisfied: sniffio>=1.1 in /usr/local/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain->-r requirements.txt (line 3)) (1.3.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain->-r requirements.txt (line 3)) (1.3.0)
+Installing collected packages: requests, pydantic-core, pyasn1-modules, protobuf, httpcore, cachetools, anyio, annotated-types, zstandard, requests-toolbelt, pyparsing, pydantic, proto-plus, packaging, orjson, httpx, grpcio, googleapis-common-protos, google-auth, tenacity, langsmith, jsonpatch, httplib2, grpcio-status, google-api-core, uritemplate, propcache, mypy-extensions, multidict, langchain-core, greenlet, google-auth-httplib2, frozenlist, zipp, yarl, typing-inspect, tqdm, SQLAlchemy, python-dotenv, marshmallow, markupsafe, langchain-text-splitters, google-api-python-client, google-ai-generativelanguage, async-timeout, aiosignal, aiohappyeyeballs, werkzeug, pydantic-settings, numpy, langchain, jinja2, itsdangerous, importlib-metadata, httpx-sse, google-generativeai, filetype, dataclasses-json, click, blinker, aiohttp, langchain-google-genai, langchain-community, gunicorn, flask, faiss-cpu
+  Attempting uninstall: requests
+    Found existing installation: requests 2.25.1
+ERROR: Cannot uninstall requests 2.25.1, RECORD file not found. Hint: The package was installed by rpm.
+[root@ip-172-31-30-43 mail-gen]# python3 app.py
+Traceback (most recent call last):
+  File "/home/ec2-user/mail-gen/app.py", line 1, in <module>
+    from flask import Flask, render_template, request
+ModuleNotFoundError: No module named 'flask'
+[root@ip-172-31-30-43 mail-gen]# nano requirements.txt
+[root@ip-172-31-30-43 mail-gen]# pip install -r requirements.txt
+Collecting flask==3.1.2
+  Using cached flask-3.1.2-py3-none-any.whl (103 kB)
+Collecting langchain==0.3.27
+  Using cached langchain-0.3.27-py3-none-any.whl (1.0 MB)
+Collecting langchain-community==0.3.29
+  Using cached langchain_community-0.3.29-py3-none-any.whl (2.5 MB)
+Collecting langchain-google-genai==2.1.10
+  Using cached langchain_google_genai-2.1.10-py3-none-any.whl (49 kB)
+Collecting langchain-text-splitters==0.3.9
+  Using cached langchain_text_splitters-0.3.9-py3-none-any.whl (33 kB)
+Collecting faiss-cpu==1.12.0
+  Using cached faiss_cpu-1.12.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.4 MB)
+Collecting python-dotenv==1.0.1
+  Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Collecting gunicorn==23.0.0
+  Using cached gunicorn-23.0.0-py3-none-any.whl (85 kB)
+Collecting blinker>=1.9.0
+  Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Collecting itsdangerous>=2.2.0
+  Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting click>=8.1.3
+  Using cached click-8.1.8-py3-none-any.whl (98 kB)
+Collecting markupsafe>=2.1.1
+  Using cached MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Collecting jinja2>=3.1.2
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting importlib-metadata>=3.6.0
+  Using cached importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Collecting werkzeug>=3.1.0
+  Using cached werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Collecting async-timeout<5.0.0,>=4.0.0
+  Using cached async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Requirement already satisfied: PyYAML>=5.3 in /usr/lib64/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (5.4.1)
+Collecting SQLAlchemy<3,>=1.4
+  Using cached sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+Requirement already satisfied: requests<3,>=2 in /usr/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (2.25.1)
+Collecting langchain-core<1.0.0,>=0.3.72
+  Using cached langchain_core-0.3.75-py3-none-any.whl (443 kB)
+Collecting langsmith>=0.1.17
+  Using cached langsmith-0.4.20-py3-none-any.whl (377 kB)
+Collecting pydantic<3.0.0,>=2.7.4
+  Using cached pydantic-2.11.7-py3-none-any.whl (444 kB)
+Collecting requests<3,>=2
+  Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Collecting dataclasses-json<0.7,>=0.6.7
+  Using cached dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Collecting tenacity!=8.4.0,<10,>=8.1.0
+  Using cached tenacity-9.1.2-py3-none-any.whl (28 kB)
+Collecting httpx-sse<1.0.0,>=0.4.0
+  Using cached httpx_sse-0.4.1-py3-none-any.whl (8.1 kB)
+Collecting numpy>=1.26.2
+  Using cached numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+Collecting aiohttp<4.0.0,>=3.8.3
+  Using cached aiohttp-3.12.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+Collecting pydantic-settings<3.0.0,>=2.10.1
+  Using cached pydantic_settings-2.10.1-py3-none-any.whl (45 kB)
+Collecting filetype<2.0.0,>=1.2.0
+  Using cached filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Collecting google-ai-generativelanguage<0.7.0,>=0.6.18
+  Using cached google_ai_generativelanguage-0.6.18-py3-none-any.whl (1.4 MB)
+Collecting packaging
+  Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Collecting frozenlist>=1.1.1
+  Using cached frozenlist-1.7.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)
+Collecting aiohappyeyeballs>=2.5.0
+  Using cached aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Collecting propcache>=0.2.0
+  Using cached propcache-0.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (200 kB)
+Collecting aiosignal>=1.4.0
+  Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting multidict<7.0,>=4.5
+  Using cached multidict-6.6.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (239 kB)
+Requirement already satisfied: attrs>=17.3.0 in /usr/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (20.3.0)
+Collecting yarl<2.0,>=1.17.0
+  Using cached yarl-1.20.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (327 kB)
+Collecting marshmallow<4.0.0,>=3.18.0
+  Using cached marshmallow-3.26.1-py3-none-any.whl (50 kB)
+Collecting typing-inspect<1,>=0.4.0
+  Using cached typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Collecting protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.20.2
+  Using cached protobuf-6.32.0-cp39-abi3-manylinux2014_x86_64.whl (322 kB)
+Collecting google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1
+  Using cached google_api_core-2.25.1-py3-none-any.whl (160 kB)
+Collecting google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1
+  Using cached google_auth-2.40.3-py2.py3-none-any.whl (216 kB)
+Collecting proto-plus<2.0.0,>=1.22.3
+  Using cached proto_plus-1.26.1-py3-none-any.whl (50 kB)
+Collecting zipp>=3.20
+  Using cached zipp-3.23.0-py3-none-any.whl (10 kB)
+Collecting jsonpatch<2.0,>=1.33
+  Using cached jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Requirement already satisfied: typing-extensions>=4.7 in /usr/local/lib/python3.9/site-packages (from langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2)) (4.15.0)
+Collecting httpx<1,>=0.23.0
+  Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Collecting zstandard>=0.23.0
+  Using cached zstandard-0.24.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.6 MB)
+Collecting orjson>=3.9.14
+  Using cached orjson-3.11.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (132 kB)
+Collecting requests-toolbelt>=1.0.0
+  Using cached requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Collecting annotated-types>=0.6.0
+  Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.33.2
+  Using cached pydantic_core-2.33.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Requirement already satisfied: typing-inspection>=0.4.0 in /usr/local/lib/python3.9/site-packages (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2)) (0.4.1)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (1.25.10)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib64/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (3.4.3)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (2.10)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (2025.8.3)
+Collecting greenlet>=1
+  Using cached greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (582 kB)
+Collecting googleapis-common-protos<2.0.0,>=1.56.2
+  Using cached googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2
+  Using cached grpcio_status-1.74.0-py3-none-any.whl (14 kB)
+Collecting grpcio<2.0.0,>=1.33.2
+  Using cached grpcio-1.74.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.2 MB)
+Collecting pyasn1-modules>=0.2.1
+  Using cached pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Requirement already satisfied: rsa<5,>=3.1.4 in /usr/local/lib/python3.9/site-packages (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (4.9.1)
+Collecting cachetools<6.0,>=2.0.0
+  Using cached cachetools-5.5.2-py3-none-any.whl (10 kB)
+Collecting httpcore==1.*
+  Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Collecting anyio
+  Using cached anyio-4.10.0-py3-none-any.whl (107 kB)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.9/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (0.16.0)
+Requirement already satisfied: jsonpointer>=1.9 in /usr/lib/python3.9/site-packages (from jsonpatch<2.0,>=1.33->langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2)) (2.0)
+Collecting mypy-extensions>=0.3.0
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Requirement already satisfied: pyasn1<0.7.0,>=0.6.1 in /usr/local/lib/python3.9/site-packages (from pyasn1-modules>=0.2.1->google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (0.6.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: sniffio>=1.1 in /usr/local/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.3.1)
+Installing collected packages: requests, pydantic-core, httpcore, anyio, annotated-types, zstandard, requests-toolbelt, pydantic, pyasn1-modules, protobuf, packaging, orjson, httpx, cachetools, tenacity, proto-plus, langsmith, jsonpatch, grpcio, googleapis-common-protos, google-auth, propcache, mypy-extensions, multidict, langchain-core, grpcio-status, greenlet, google-api-core, frozenlist, zipp, yarl, typing-inspect, SQLAlchemy, python-dotenv, marshmallow, markupsafe, langchain-text-splitters, async-timeout, aiosignal, aiohappyeyeballs, werkzeug, pydantic-settings, numpy, langchain, jinja2, itsdangerous, importlib-metadata, httpx-sse, google-ai-generativelanguage, filetype, dataclasses-json, click, blinker, aiohttp, langchain-google-genai, langchain-community, gunicorn, flask, faiss-cpu
+  Attempting uninstall: requests
+    Found existing installation: requests 2.25.1
+ERROR: Cannot uninstall requests 2.25.1, RECORD file not found. Hint: The package was installed by rpm.
+[root@ip-172-31-30-43 mail-gen]# python3 app.py
+Traceback (most recent call last):
+  File "/home/ec2-user/mail-gen/app.py", line 1, in <module>
+    from flask import Flask, render_template, request
+ModuleNotFoundError: No module named 'flask'
+[root@ip-172-31-30-43 mail-gen]# # Install virtualenv if not present
+pip3 install virtualenv --user
+
+# Create a venv inside your project
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+Collecting virtualenv
+  Downloading virtualenv-20.34.0-py3-none-any.whl (6.0 MB)
+     |████████████████████████████████| 6.0 MB 13.0 MB/s
+Collecting distlib<1,>=0.3.7
+  Downloading distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+     |████████████████████████████████| 469 kB 66.1 MB/s
+Requirement already satisfied: typing-extensions>=4.13.2 in /usr/local/lib/python3.9/site-packages (from virtualenv) (4.15.0)
+Collecting platformdirs<5,>=3.9.1
+  Downloading platformdirs-4.4.0-py3-none-any.whl (18 kB)
+Collecting filelock<4,>=3.12.2
+  Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Installing collected packages: platformdirs, filelock, distlib, virtualenv
+Successfully installed distlib-0.4.0 filelock-3.19.1 platformdirs-4.4.0 virtualenv-20.34.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+(venv) [root@ip-172-31-30-43 mail-gen]# pip install --upgrade pip
+pip install -r requirements.txt
+Requirement already satisfied: pip in ./venv/lib/python3.9/site-packages (21.3.1)
+Collecting pip
+  Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+     |████████████████████████████████| 1.8 MB 15.8 MB/s
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 21.3.1
+    Uninstalling pip-21.3.1:
+      Successfully uninstalled pip-21.3.1
+Successfully installed pip-25.2
+Collecting flask==3.1.2 (from -r requirements.txt (line 1))
+  Downloading flask-3.1.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting langchain==0.3.27 (from -r requirements.txt (line 2))
+  Downloading langchain-0.3.27-py3-none-any.whl.metadata (7.8 kB)
+Collecting langchain-community==0.3.29 (from -r requirements.txt (line 3))
+  Downloading langchain_community-0.3.29-py3-none-any.whl.metadata (2.9 kB)
+Collecting langchain-google-genai==2.1.10 (from -r requirements.txt (line 4))
+  Downloading langchain_google_genai-2.1.10-py3-none-any.whl.metadata (7.2 kB)
+Collecting langchain-text-splitters==0.3.9 (from -r requirements.txt (line 5))
+  Downloading langchain_text_splitters-0.3.9-py3-none-any.whl.metadata (1.9 kB)
+Collecting faiss-cpu==1.12.0 (from -r requirements.txt (line 6))
+  Downloading faiss_cpu-1.12.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Collecting python-dotenv==1.0.1 (from -r requirements.txt (line 7))
+  Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting gunicorn==23.0.0 (from -r requirements.txt (line 8))
+  Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting blinker>=1.9.0 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting click>=8.1.3 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting importlib-metadata>=3.6.0 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting itsdangerous>=2.2.0 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting werkzeug>=3.1.0 (from flask==3.1.2->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting langchain-core<1.0.0,>=0.3.72 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading langchain_core-0.3.75-py3-none-any.whl.metadata (5.7 kB)
+Collecting langsmith>=0.1.17 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading langsmith-0.4.20-py3-none-any.whl.metadata (14 kB)
+Collecting pydantic<3.0.0,>=2.7.4 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+Collecting SQLAlchemy<3,>=1.4 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting requests<3,>=2 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting PyYAML>=5.3 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting async-timeout<5.0.0,>=4.0.0 (from langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading async_timeout-4.0.3-py3-none-any.whl.metadata (4.2 kB)
+Collecting aiohttp<4.0.0,>=3.8.3 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading aiohttp-3.12.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting tenacity!=8.4.0,<10,>=8.1.0 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+Collecting dataclasses-json<0.7,>=0.6.7 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading dataclasses_json-0.6.7-py3-none-any.whl.metadata (25 kB)
+Collecting pydantic-settings<3.0.0,>=2.10.1 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading pydantic_settings-2.10.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting httpx-sse<1.0.0,>=0.4.0 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading httpx_sse-0.4.1-py3-none-any.whl.metadata (9.4 kB)
+Collecting numpy>=1.26.2 (from langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+Collecting filetype<2.0.0,>=1.2.0 (from langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading filetype-1.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+Collecting google-ai-generativelanguage<0.7.0,>=0.6.18 (from langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading google_ai_generativelanguage-0.6.18-py3-none-any.whl.metadata (9.8 kB)
+Collecting packaging (from faiss-cpu==1.12.0->-r requirements.txt (line 6))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading frozenlist-1.7.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading multidict-6.6.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading propcache-0.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading yarl-1.20.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (73 kB)
+Collecting marshmallow<4.0.0,>=3.18.0 (from dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading marshmallow-3.26.1-py3-none-any.whl.metadata (7.3 kB)
+Collecting typing-inspect<1,>=0.4.0 (from dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading typing_inspect-0.9.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting google-api-core!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1 (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading google_api_core-2.25.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1 (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading google_auth-2.40.3-py2.py3-none-any.whl.metadata (6.2 kB)
+Collecting proto-plus<2.0.0,>=1.22.3 (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading proto_plus-1.26.1-py3-none-any.whl.metadata (2.2 kB)
+Collecting protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.20.2 (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading protobuf-6.32.0-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting googleapis-common-protos<2.0.0,>=1.56.2 (from google-api-core!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading googleapis_common_protos-1.70.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting grpcio<2.0.0,>=1.33.2 (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading grpcio-1.74.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting grpcio-status<2.0.0,>=1.33.2 (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading grpcio_status-1.74.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting cachetools<6.0,>=2.0.0 (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting pyasn1-modules>=0.2.1 (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting rsa<5,>=3.1.4 (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting jsonpatch<2.0,>=1.33 (from langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading jsonpatch-1.33-py2.py3-none-any.whl.metadata (3.0 kB)
+Collecting typing-extensions>=4.7 (from langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting jsonpointer>=1.9 (from jsonpatch<2.0,>=1.33->langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading jsonpointer-3.0.0-py2.py3-none-any.whl.metadata (2.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading pydantic_core-2.33.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading charset_normalizer-3.4.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting pyasn1>=0.1.3 (from rsa<5,>=3.1.4->google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4))
+  Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting greenlet>=1 (from SQLAlchemy<3,>=1.4->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting mypy-extensions>=0.3.0 (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3))
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting zipp>=3.20 (from importlib-metadata>=3.6.0->flask==3.1.2->-r requirements.txt (line 1))
+  Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting httpx<1,>=0.23.0 (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting orjson>=3.9.14 (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading orjson-3.11.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (41 kB)
+Collecting requests-toolbelt>=1.0.0 (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
+Collecting zstandard>=0.23.0 (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading zstandard-0.24.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.1 kB)
+Collecting anyio (from httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading anyio-4.10.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting httpcore==1.* (from httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting exceptiongroup>=1.0.2 (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading exceptiongroup-1.3.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting sniffio>=1.1 (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2))
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+Downloading langchain-0.3.27-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 62.0 MB/s  0:00:00
+Downloading langchain_text_splitters-0.3.9-py3-none-any.whl (33 kB)
+Downloading langchain_community-0.3.29-py3-none-any.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 156.8 MB/s  0:00:00
+Downloading langchain_google_genai-2.1.10-py3-none-any.whl (49 kB)
+Downloading faiss_cpu-1.12.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (31.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 31.4/31.4 MB 176.4 MB/s  0:00:00
+Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+Downloading aiohttp-3.12.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 88.8 MB/s  0:00:00
+Downloading async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Downloading dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Downloading filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Downloading google_ai_generativelanguage-0.6.18-py3-none-any.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 97.7 MB/s  0:00:00
+Downloading google_api_core-2.25.1-py3-none-any.whl (160 kB)
+Downloading google_auth-2.40.3-py2.py3-none-any.whl (216 kB)
+Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+Downloading googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB)
+Downloading grpcio-1.74.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 218.0 MB/s  0:00:00
+Downloading grpcio_status-1.74.0-py3-none-any.whl (14 kB)
+Downloading httpx_sse-0.4.1-py3-none-any.whl (8.1 kB)
+Downloading langchain_core-0.3.75-py3-none-any.whl (443 kB)
+Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Downloading marshmallow-3.26.1-py3-none-any.whl (50 kB)
+Downloading multidict-6.6.4-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (239 kB)
+Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 223.4 MB/s  0:00:00
+Downloading proto_plus-1.26.1-py3-none-any.whl (50 kB)
+Downloading protobuf-6.32.0-cp39-abi3-manylinux2014_x86_64.whl (322 kB)
+Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+Downloading pydantic_core-2.33.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 163.3 MB/s  0:00:00
+Downloading pydantic_settings-2.10.1-py3-none-any.whl (45 kB)
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+Downloading sqlalchemy-2.0.43-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 172.4 MB/s  0:00:00
+Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading yarl-1.20.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (327 kB)
+Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+Downloading click-8.1.8-py3-none-any.whl (98 kB)
+Downloading frozenlist-1.7.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (225 kB)
+Downloading greenlet-3.2.4-cp39-cp39-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (582 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 582.8/582.8 kB 37.5 MB/s  0:00:00
+Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading jsonpointer-3.0.0-py2.py3-none-any.whl (7.6 kB)
+Downloading langsmith-0.4.20-py3-none-any.whl (377 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Downloading orjson-3.11.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (132 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading propcache-0.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (200 kB)
+Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Downloading PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (737 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 737.4/737.4 kB 54.3 MB/s  0:00:00
+Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Downloading zstandard-0.24.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.6/5.6 MB 182.7 MB/s  0:00:00
+Downloading anyio-4.10.0-py3-none-any.whl (107 kB)
+Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Installing collected packages: filetype, zstandard, zipp, urllib3, typing-extensions, tenacity, sniffio, PyYAML, python-dotenv, pyasn1, protobuf, propcache, packaging, orjson, numpy, mypy-extensions, markupsafe, jsonpointer, itsdangerous, idna, httpx-sse, h11, grpcio, greenlet, frozenlist, click, charset_normalizer, certifi, cachetools, blinker, attrs, async-timeout, annotated-types, aiohappyeyeballs, werkzeug, typing-inspection, typing-inspect, SQLAlchemy, rsa, requests, pydantic-core, pyasn1-modules, proto-plus, multidict, marshmallow, jsonpatch, jinja2, importlib-metadata, httpcore, gunicorn, googleapis-common-protos, faiss-cpu, exceptiongroup, aiosignal, yarl, requests-toolbelt, pydantic, grpcio-status, google-auth, flask, dataclasses-json, anyio, pydantic-settings, httpx, google-api-core, aiohttp, langsmith, langchain-core, google-ai-generativelanguage, langchain-text-splitters, langchain-google-genai, langchain, langchain-community
+Successfully installed PyYAML-6.0.2 SQLAlchemy-2.0.43 aiohappyeyeballs-2.6.1 aiohttp-3.12.15 aiosignal-1.4.0 annotated-types-0.7.0 anyio-4.10.0 async-timeout-4.0.3 attrs-25.3.0 blinker-1.9.0 cachetools-5.5.2 certifi-2025.8.3 charset_normalizer-3.4.3 click-8.1.8 dataclasses-json-0.6.7 exceptiongroup-1.3.0 faiss-cpu-1.12.0 filetype-1.2.0 flask-3.1.2 frozenlist-1.7.0 google-ai-generativelanguage-0.6.18 google-api-core-2.25.1 google-auth-2.40.3 googleapis-common-protos-1.70.0 greenlet-3.2.4 grpcio-1.74.0 grpcio-status-1.74.0 gunicorn-23.0.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 httpx-sse-0.4.1 idna-3.10 importlib-metadata-8.7.0 itsdangerous-2.2.0 jinja2-3.1.6 jsonpatch-1.33 jsonpointer-3.0.0 langchain-0.3.27 langchain-community-0.3.29 langchain-core-0.3.75 langchain-google-genai-2.1.10 langchain-text-splitters-0.3.9 langsmith-0.4.20 markupsafe-3.0.2 marshmallow-3.26.1 multidict-6.6.4 mypy-extensions-1.1.0 numpy-2.0.2 orjson-3.11.3 packaging-25.0 propcache-0.3.2 proto-plus-1.26.1 protobuf-6.32.0 pyasn1-0.6.1 pyasn1-modules-0.4.2 pydantic-2.11.7 pydantic-core-2.33.2 pydantic-settings-2.10.1 python-dotenv-1.0.1 requests-2.32.5 requests-toolbelt-1.0.0 rsa-4.9.1 sniffio-1.3.1 tenacity-9.1.2 typing-extensions-4.15.0 typing-inspect-0.9.0 typing-inspection-0.4.1 urllib3-2.5.0 werkzeug-3.1.3 yarl-1.20.1 zipp-3.23.0 zstandard-0.24.0
+(venv) [root@ip-172-31-30-43 mail-gen]# ^C
+(venv) [root@ip-172-31-30-43 mail-gen]# pip install -r requirements.txt
+Requirement already satisfied: flask==3.1.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: langchain==0.3.27 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (0.3.27)
+Requirement already satisfied: langchain-community==0.3.29 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.3.29)
+Requirement already satisfied: langchain-google-genai==2.1.10 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (2.1.10)
+Requirement already satisfied: langchain-text-splitters==0.3.9 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (0.3.9)
+Requirement already satisfied: faiss-cpu==1.12.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (1.12.0)
+Requirement already satisfied: python-dotenv==1.0.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (1.0.1)
+Requirement already satisfied: gunicorn==23.0.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 8)) (23.0.0)
+Requirement already satisfied: blinker>=1.9.0 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (8.1.8)
+Requirement already satisfied: importlib-metadata>=3.6.0 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (8.7.0)
+Requirement already satisfied: itsdangerous>=2.2.0 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: jinja2>=3.1.2 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (3.0.2)
+Requirement already satisfied: werkzeug>=3.1.0 in ./venv/lib/python3.9/site-packages (from flask==3.1.2->-r requirements.txt (line 1)) (3.1.3)
+Requirement already satisfied: langchain-core<1.0.0,>=0.3.72 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (0.3.75)
+Requirement already satisfied: langsmith>=0.1.17 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (0.4.20)
+Requirement already satisfied: pydantic<3.0.0,>=2.7.4 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (2.11.7)
+Requirement already satisfied: SQLAlchemy<3,>=1.4 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (2.0.43)
+Requirement already satisfied: requests<3,>=2 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (2.32.5)
+Requirement already satisfied: PyYAML>=5.3 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (6.0.2)
+Requirement already satisfied: async-timeout<5.0.0,>=4.0.0 in ./venv/lib/python3.9/site-packages (from langchain==0.3.27->-r requirements.txt (line 2)) (4.0.3)
+Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (3.12.15)
+Requirement already satisfied: tenacity!=8.4.0,<10,>=8.1.0 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (9.1.2)
+Requirement already satisfied: dataclasses-json<0.7,>=0.6.7 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (0.6.7)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.10.1 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (2.10.1)
+Requirement already satisfied: httpx-sse<1.0.0,>=0.4.0 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (0.4.1)
+Requirement already satisfied: numpy>=1.26.2 in ./venv/lib/python3.9/site-packages (from langchain-community==0.3.29->-r requirements.txt (line 3)) (2.0.2)
+Requirement already satisfied: filetype<2.0.0,>=1.2.0 in ./venv/lib/python3.9/site-packages (from langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (1.2.0)
+Requirement already satisfied: google-ai-generativelanguage<0.7.0,>=0.6.18 in ./venv/lib/python3.9/site-packages (from langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (0.6.18)
+Requirement already satisfied: packaging in ./venv/lib/python3.9/site-packages (from faiss-cpu==1.12.0->-r requirements.txt (line 6)) (25.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (1.7.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (6.6.4)
+Requirement already satisfied: propcache>=0.2.0 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (0.3.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./venv/lib/python3.9/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.29->-r requirements.txt (line 3)) (1.20.1)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in ./venv/lib/python3.9/site-packages (from dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3)) (3.26.1)
+Requirement already satisfied: typing-inspect<1,>=0.4.0 in ./venv/lib/python3.9/site-packages (from dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3)) (0.9.0)
+Requirement already satisfied: google-api-core!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1 in ./venv/lib/python3.9/site-packages (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (2.25.1)
+Requirement already satisfied: google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1 in ./venv/lib/python3.9/site-packages (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (2.40.3)
+Requirement already satisfied: proto-plus<2.0.0,>=1.22.3 in ./venv/lib/python3.9/site-packages (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (1.26.1)
+Requirement already satisfied: protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<7.0.0,>=3.20.2 in ./venv/lib/python3.9/site-packages (from google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (6.32.0)
+Requirement already satisfied: googleapis-common-protos<2.0.0,>=1.56.2 in ./venv/lib/python3.9/site-packages (from google-api-core!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: grpcio<2.0.0,>=1.33.2 in ./venv/lib/python3.9/site-packages (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (1.74.0)
+Requirement already satisfied: grpcio-status<2.0.0,>=1.33.2 in ./venv/lib/python3.9/site-packages (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0,>=1.34.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (1.74.0)
+Requirement already satisfied: cachetools<6.0,>=2.0.0 in ./venv/lib/python3.9/site-packages (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (5.5.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in ./venv/lib/python3.9/site-packages (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (0.4.2)
+Requirement already satisfied: rsa<5,>=3.1.4 in ./venv/lib/python3.9/site-packages (from google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (4.9.1)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in ./venv/lib/python3.9/site-packages (from langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2)) (1.33)
+Requirement already satisfied: typing-extensions>=4.7 in ./venv/lib/python3.9/site-packages (from langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2)) (4.15.0)
+Requirement already satisfied: jsonpointer>=1.9 in ./venv/lib/python3.9/site-packages (from jsonpatch<2.0,>=1.33->langchain-core<1.0.0,>=0.3.72->langchain==0.3.27->-r requirements.txt (line 2)) (3.0.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./venv/lib/python3.9/site-packages (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in ./venv/lib/python3.9/site-packages (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2)) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./venv/lib/python3.9/site-packages (from pydantic<3.0.0,>=2.7.4->langchain==0.3.27->-r requirements.txt (line 2)) (0.4.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (3.4.3)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.9/site-packages (from requests<3,>=2->langchain==0.3.27->-r requirements.txt (line 2)) (2025.8.3)
+Requirement already satisfied: pyasn1>=0.1.3 in ./venv/lib/python3.9/site-packages (from rsa<5,>=3.1.4->google-auth!=2.24.0,!=2.25.0,<3.0.0,>=2.14.1->google-ai-generativelanguage<0.7.0,>=0.6.18->langchain-google-genai==2.1.10->-r requirements.txt (line 4)) (0.6.1)
+Requirement already satisfied: greenlet>=1 in ./venv/lib/python3.9/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.3.27->-r requirements.txt (line 2)) (3.2.4)
+Requirement already satisfied: mypy-extensions>=0.3.0 in ./venv/lib/python3.9/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.6.7->langchain-community==0.3.29->-r requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: zipp>=3.20 in ./venv/lib/python3.9/site-packages (from importlib-metadata>=3.6.0->flask==3.1.2->-r requirements.txt (line 1)) (3.23.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./venv/lib/python3.9/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (0.28.1)
+Requirement already satisfied: orjson>=3.9.14 in ./venv/lib/python3.9/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (3.11.3)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in ./venv/lib/python3.9/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.0.0)
+Requirement already satisfied: zstandard>=0.23.0 in ./venv/lib/python3.9/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (0.24.0)
+Requirement already satisfied: anyio in ./venv/lib/python3.9/site-packages (from httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (4.10.0)
+Requirement already satisfied: httpcore==1.* in ./venv/lib/python3.9/site-packages (from httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./venv/lib/python3.9/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (0.16.0)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.9/site-packages (from anyio->httpx<1,>=0.23.0->langsmith>=0.1.17->langchain==0.3.27->-r requirements.txt (line 2)) (1.3.1)
+(venv) [root@ip-172-31-30-43 mail-gen]# python app.py
+/home/ec2-user/mail-gen/app.py:117: LangChainDeprecationWarning: The class `LLMChain` was deprecated in LangChain 0.1.17 and will be removed in 1.0. Use :meth:`~RunnableSequence, e.g., `prompt | llm`` instead.
+  email_chain=LLMChain(llm=llm, prompt=email_prompt)
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://172.31.30.43:10000
+Press CTRL+C to quit
+14.195.131.227 - - [28/Aug/2025 06:38:53] "GET / HTTP/1.1" 200 -
+14.195.131.227 - - [28/Aug/2025 06:38:55] "GET /favicon.ico HTTP/1.1" 404 -
